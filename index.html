@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Super Mario Bros 3 Memory Game</title>
+    <script src="angular.js"></script>
+    <script src="memorygame.js"></script>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body ng-app="memorygame" ng-controller="GameController">
+    <table class="game">
+      <tr ng-repeat="row in cards">
+        <td class="card" ng-class="{open: card.open}" ng-click="click(card)" ng-repeat="card in row">
+          <div class="front">
+            <img class="powerup" ng-src="{{card.url}}">
+          </div>
+          <div class="back">
+            <img class="logo" ng-src="images/ncard.png">
+          </div>
+        </td>
+      </tr>
+    </table>
+    <img class="toolbar" src="images/footer.png" alt="toolbar" />
+  </body>
+</html>

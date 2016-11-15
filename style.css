@@ -1,0 +1,74 @@
+body {
+  background-image: url('images/redstripe.jpg');
+  background-repeat: repeat;
+}
+
+.board {
+  margin: auto;
+}
+
+table.game {
+  margin: auto;
+  background-color: black;
+
+}
+
+.card {
+  perspective: 2000px;
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.card .front, .card .back {
+  width: 200px;
+  height: 200px;
+  border: none;
+  position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.card .front .powerup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card .back .logo {
+  position: absolute;
+  width: 90px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card .front, .card .back {
+  backface-visibility: hidden;
+  transition: 0.6s;
+}
+
+.card .front {
+  transform: rotateY(180deg);
+}
+
+.card .back {
+  transform: rotateY(0deg);
+}
+
+.card.open .back {
+  transform: rotateY(180deg);
+}
+
+.card.open .front {
+  transform: rotateY(0deg);
+}
+
+.toolbar {
+  position: absolute;
+  width: 1026px;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
